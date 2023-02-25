@@ -5,7 +5,7 @@ import { Second } from "../components/welcome/second";
 import { Third } from "../components/welcome/third";
 import { Bar } from "../views/Bar";
 import { Foo } from "../views/Foo";
-import { Welcome } from "../views/welcome";
+import { Welcome } from "../views/Welcome";
 
 export const routes: RouteRecordRaw[] = [
   { path: '/', component: Foo},
