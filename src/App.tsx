@@ -4,10 +4,10 @@ import "./App.scss"
 
 export const App = defineComponent({
   setup() {
-    return () => <>
+    return () => (
       <div>
         <RouterView/>
       </div>
-    </>
+    )
   }
 })
