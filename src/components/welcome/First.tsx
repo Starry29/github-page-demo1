@@ -1,23 +1,13 @@
-import { defineComponent } from 'vue';
-import { RouterLink } from 'vue-router';
-import s from './First.module.scss'
-import pig from '../../assets/icons/pig.svg'
-import {WelcomeLayout} from './WelcomeLayout'
-
-export const First = defineComponent({
-  setup:(props, context) => {
-    return () => (
-      <WelcomeLayout>
-        {{
-          icon: () => <img class={s.icon} src={pig} />,
-          title: () => <h2>会挣钱<br/>还要会省钱</h2>,
-          buttons: () => <>
-            <RouterLink class={s.fake} to="/start">跳过</RouterLink>
-            <RouterLink to="/welcome/2">下一页</RouterLink>
-            <RouterLink to="/start">跳过</RouterLink>
-          </>
-        }}
-      </WelcomeLayout>
-    )
-  }
-})  
+import s from './welcome.module.scss';
+import { FunctionalComponent } from 'vue';
+export const First: FunctionalComponent = () => {
+  return(
+    <div class={s.card}>
+      <svg>
+        <use xlinkHref='#pig'></use>
+      </svg>
+      <h2>会挣钱<br />还会省钱</h2>
+    </div>
+  )
+}
+First.displayName = 'First'
