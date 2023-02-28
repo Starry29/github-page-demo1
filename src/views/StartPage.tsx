@@ -12,13 +12,13 @@ export const StartPage = defineComponent({
   setup: (props, context) => {
     const refOverlayVisible = ref(false)
     const onClickMenu = () => {
-       refOverlayVisible.value =! refOverlayVisible.value
+      refOverlayVisible.value = !refOverlayVisible.value
     }
     return () => (
       <MainLayout>{
         {
           title: () => '山竹记账',
-          icon: () => <Icon name='menu' class={s.navIcon} onClick={onClickMenu} />,
+          icon: () => <Icon name="menu" class={s.navIcon} onClick={onClickMenu} />,
           default: () => <>
             <Center class={s.pig_wrapper}>
               <Icon name="pig" class={s.pig} />
