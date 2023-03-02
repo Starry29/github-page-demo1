@@ -29,19 +29,19 @@ export const routes: RouteRecordRaw[] = [
       { path: '4', name: "Welcome4", components: { main: Forth, footer: ForthActions }, },
     ]
   },
-  {path:'/start', component: StartPage},
+  { path: '/start', component: StartPage },
   {
     path: '/items', component: ItemPage,
     children: [
-      {path: '', component: ItemList},
-      {path: 'create', component: ItemCreate}
+      { path: '', component: ItemList },
+      { path: 'create', component: ItemCreate },
     ]
   },
   {
     path: '/tags', component: TagPage,
     children: [
       {path: 'create', component: TagCreate},
-      {path: ':id', component: TagEdit}
+      {path: ':id/edit', component: TagEdit}
     ]
   }
 ]
