@@ -5,10 +5,13 @@ export const EmojiSelect = defineComponent({
   props: {
     modelValue: {
       type: String
+    },
+    onUpdateModelValue: {
+      type: Function as PropType<(emoji: string) => void>
     }
   },
   setup: (props, context) => {
-    const refSelected = ref(0)
+    const refSelected = ref(1)
     const table: [string, string[]][] = [
       ['表情', ['face-smiling', 'face-affection', 'face-tongue', 'face-hand',
         'face-neutral-skeptical', 'face-sleepy', 'face-unwell', 'face-hat',
@@ -33,7 +36,11 @@ export const EmojiSelect = defineComponent({
       refSelected.value = index
     }
     const onClickEmoji = (emoji: string) => {
-      context.emit('update:modelValue', emoji)
+      if (props.onUpdateModelValue) {
+        props.onUpdateModelValue(emoji)
+      } else {
+        context.emit('update:modelValue', emoji)
+      }
     }
     const emojis = computed(() => {
       const selectedItem = table[refSelected.value][1]
