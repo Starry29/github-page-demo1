@@ -10,10 +10,6 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
-  &.normal {
-  }
-  &.important {
-  }
   &.danger {
     background: var(--button-bg-danger);
     border-color: var(--button-bg-danger);
