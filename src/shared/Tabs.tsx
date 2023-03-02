@@ -2,35 +2,42 @@ import { defineComponent, PropType } from 'vue';
 import s from './Tabs.module.scss';
 export const Tabs = defineComponent({
   props: {
+    classPrefix: {
+      type: String
+    },
     selected: {
-      type: String as PropType<string>
+      type: String as PropType<string>,
+      required: false,
     },
     onUpdateSelected: {
       type: Function as PropType<(name: string) => void>,
-      required: false
+      required: false,
     }
   },
-  setup(props, context) {
+  setup: (props, context) => {
     return () => {
-      const array  = context.slots.default?.()
-      if (!array) return () => null
-      for(let i = 0; i < Array.length; i++){
-        if(array[i].type !== Tab){
-          throw new Error('<Tabs> only accepts <Tab> as childen')
+      const tabs = context.slots.default?.()
+      if (!tabs) return () => null
+      for (let i = 0; i < tabs.length; i++) {
+        if (tabs[i].type !== Tab) {
+          throw new Error('<Tabs> only accepts <Tab> as children')
         }
       }
-      return <div class={s.tabs}>
-        <ol class={s.tabs_nav}>
-          {array.map(item => 
-            <li class={item.props?.name === props.selected ? s.selected : ''}
+      const cp = props.classPrefix
+      return <div class={[s.tabs, cp + '_tabs']}>
+        <ol class={[s.tabs_nav, cp + '_tabs_nav']}>
+          {tabs.map(item =>
+            <li class={[
+              item.props?.name === props.selected ? [s.selected, cp + '_selected'] : '',
+              cp + '_tabs_nav_item'
+            ]}
               onClick={() => context.emit('update:selected', item.props?.name)}
-            >              
+            >
               {item.props?.name}
-            </li>)
-          }
+            </li>)}
         </ol>
         <div>
-          {array.find(item => item.props?.name === props.selected)}
+          {tabs.find(item => item.props?.name === props.selected)}
         </div>
       </div>
     }
@@ -43,7 +50,7 @@ export const Tab = defineComponent({
       type: String as PropType<string>
     }
   },
-  setup(props, context) {
+  setup: (props, context) => {
     return () => (
       <div>{context.slots.default?.()}</div>
     )
