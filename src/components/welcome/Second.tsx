@@ -11,7 +11,3 @@ export const Second: FunctionalComponent = () => {
 }
 
 Second.displayName = 'Second'
-
-
- 
-          

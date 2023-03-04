@@ -8,7 +8,7 @@ export const FloatButton = defineComponent({
       required: true
     }
   },
-  setup(props, context) {
+  setup: (props, context) => {
     return () => (
       <div class={s.floatButton}>
         <Icon name={props.iconName} class={s.icon}/>

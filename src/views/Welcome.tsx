@@ -3,11 +3,12 @@ import { RouteLocationNormalizedLoaded, RouterView, useRoute, useRouter } from '
 import { useSwipe } from '../hooks/useSwipe';
 import { throttle } from '../shared/throttle';
 import s from './Welcome.module.scss'
+
 const pushMap: Record<string, string> = {
   'Welcome1': '/welcome/2',
   'Welcome2': '/welcome/3',
   'Welcome3': '/welcome/4',
-  'Welcome4': '/start'
+  'Welcome4': '/items',
 }
 export const Welcome = defineComponent({
   setup: (props, context) => {
@@ -18,9 +19,9 @@ export const Welcome = defineComponent({
     const replace = throttle(() => {
       const name = (route.name || 'Welcome1').toString()
       router.replace(pushMap[name])
-    },500)
+    }, 500)
     watchEffect(() => {
-      if(swiping.value && direction.value === 'left'){
+      if (swiping.value && direction.value === 'left') {
         replace()
       }
     })

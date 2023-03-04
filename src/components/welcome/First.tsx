@@ -1,7 +1,7 @@
 import s from './welcome.module.scss';
 import { FunctionalComponent } from 'vue';
 export const First: FunctionalComponent = () => {
-  return(
+  return (
     <div class={s.card}>
       <svg>
         <use xlinkHref='#pig'></use>
@@ -10,4 +10,5 @@ export const First: FunctionalComponent = () => {
     </div>
   )
 }
+
 First.displayName = 'First'
