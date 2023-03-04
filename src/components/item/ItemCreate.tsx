@@ -1,12 +1,14 @@
 import { AxiosError } from 'axios';
 import { Dialog } from 'vant';
-import { defineComponent, PropType, reactive } from 'vue';
+import { defineComponent, onMounted, PropType, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { MainLayout } from '../../layouts/MainLayout';
 import { BackIcon } from '../../shared/BackIcon';
+import { Button } from '../../shared/Button';
 import { http } from '../../shared/Http';
 import { Icon } from '../../shared/Icon';
 import { Tabs, Tab } from '../../shared/Tabs';
+import { useTags } from '../../shared/useTags';
 import { InputPad } from './InputPad';
 import s from './ItemCreate.module.scss';
 import { Tags } from './Tags';
