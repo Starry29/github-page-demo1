@@ -1,9 +1,9 @@
-import { Dialog, Divider } from 'vant';
-import { defineComponent, onMounted, PropType, ref } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
-import { Icon } from './Icon';
-import { mePromise } from './me';
-import s from './Overlay.module.scss';
+import { Dialog } from 'vant'
+import { defineComponent, onMounted, PropType, ref } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
+import { Icon } from './Icon'
+import { mePromise } from './me'
+import s from './Overlay.module.scss'
 export const Overlay = defineComponent({
   props: {
     onClose: {
@@ -12,18 +12,18 @@ export const Overlay = defineComponent({
   },
   setup: (props, context) => {
     const close = () => {
-      props.onClose?.();
-    };
-    const route = useRoute();
-    const me = ref<User>();
+      props.onClose?.()
+    }
+    const route = useRoute()
+    const me = ref<User>()
     onMounted(async () => {
-      const response = await mePromise;
-      me.value = response?.data.resource;
-    });
-    const onSignOut = async() => {
+      const response = await mePromise
+      me.value = response?.data.resource
+    })
+    const onSignOut = async () => {
       await Dialog.confirm({
-        title: '确定',
-        message: '你真的要退出登录吗？'
+        title: '确认',
+        message: '你真的要退出登录吗？',
       })
       localStorage.removeItem('jwt')
     }
@@ -38,7 +38,7 @@ export const Overlay = defineComponent({
                 <p onClick={onSignOut}>点击这里退出登录</p>
               </div>
             ) : (
-              <RouterLink to={`/sign_in?return to=${route.fullPath}`}>
+              <RouterLink to={`/sign_in?return_to=${route.fullPath}`}>
                 <h2>未登录用户</h2>
                 <p>点击这里登录</p>
               </RouterLink>
@@ -68,16 +68,16 @@ export const Overlay = defineComponent({
           </nav>
         </div>
       </>
-    );
+    )
   },
-});
+})
 
 export const OverlayIcon = defineComponent({
   setup: (props, context) => {
-    const refOverlayVisible = ref(false);
+    const refOverlayVisible = ref(false)
     const onClickMenu = () => {
-      refOverlayVisible.value = !refOverlayVisible.value;
-    };
+      refOverlayVisible.value = !refOverlayVisible.value
+    }
     return () => (
       <>
         <Icon name="menu" class={s.icon} onClick={onClickMenu} />
@@ -85,6 +85,6 @@ export const OverlayIcon = defineComponent({
           <Overlay onClose={() => (refOverlayVisible.value = false)} />
         )}
       </>
-    );
+    )
   },
-});
+})
