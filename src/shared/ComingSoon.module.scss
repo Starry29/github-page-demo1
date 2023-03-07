@@ -2,11 +2,20 @@
   text-align: center;
   font-size: 32px;
 }
+.link{
+  text-align: center;
+}
 
-.pig{
-  width: 128px;
-  height: 128px;
+.nodata{
+  width: 200px;
+  height: 200px;
   &_wrapper{
-    padding: 120px 0;
+    padding: 100px 0;
   }
+}
+.list{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
 }

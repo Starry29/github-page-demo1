@@ -1,9 +1,9 @@
 :root {
   --amount-text: #53a867;
-  --app-name-text: #7878FF;
+  --app-name-text: #19caad;
   --bg: white;
-  --button-bg-danger: #E10505;
-  --button-bg: #5c33be;
+  --button-bg-danger: #e10505;
+  --button-bg: #8cc7b5;
   --button-border-color: #ddd;
   --button-font-size: 18px;
   --button-height: 48px;
@@ -13,40 +13,40 @@
   --dialog-header-text: white;
   --emoji-nav-text-selected: #333;
   --emoji-nav-text: #999;
-  --error-color: #E10505;
+  --error-color: #e10505;
   --float-button-bg: var(--button-bg);
   --float-button-text: white;
-  --input-border-color: #5c33be;
+  --input-border-color: #8cc7b5;
   --input-min-height: 48px;
   --input-radius: var(--button-radius);
-  --input-shadow: rgba(0,0,0,0.25);
+  --input-shadow: rgba(0, 0, 0, 0.25);
   --list-amount-text: var(--amount-text);
   --list-tag-text: #333;
   --list-time-text: var(--date-text);
-  --main: #5c33be;
+  --main: #8cc7b5;
   --navbar-bg-end: var(--welcome-bg-end);
   --navbar-bg-start: var(--welcome-bg-start);
   --navbar-text: white;
-  --number-button-bg-important: #5c33be;
+  --number-button-bg-important: #8cc7b5;
   --number-button-bg: white;
   --number-button-text-important: white;
   --overlay-bg: white;
   --overlay-mask-bg: rgba(0, 0, 0, 0.5);
-  --overlay-user-bg: #5c33be;
+  --overlay-user-bg: #8cc7b5;
   --overlay-user-text: white;
-  --tabs-indicator-bg: rgba(255, 255, 255, 0.5);
-  --tag-bg: #EFEFEF;
+  --tabs-indicator-bg: rgba(255, 255, 255, 0.8);
+  --tag-bg: #efefef;
   --text: #333;
   --text-muted: #666;
   --top-safe-area-height: 24px;
-  --total-bg: #252A43;
-  --total-expenses: #53A867;
-  --total-income: #FE7275;
+  --total-bg: #252a43;
+  --total-expenses: #53a867;
+  --total-income: #fe7275;
   --total-text: white;
   --transition-duration: 0.5s;
   --van-overlay-z-index: 64;
-  --welcome-bg-end: #8f4cd7;
-  --welcome-bg-start: #5d33be;
+  --welcome-bg-end: #19caad;
+  --welcome-bg-start: #a0eee1;
   --welcome-card-bg: white;
   --welcome-nav-gap: 8px;
   --welcome-nav-height: 64px;
@@ -54,5 +54,9 @@
   --z-index-bottom-nav: 8;
   --z-index-navbar: 32;
   --z-index-overlay: 16;
-  --bar-bg: #CCCCCC;
+  --bar-bg: #cccccc;
+  --black-shadow: 0px 0px 2.2px rgba(0, 0, 0, 0.02), 0px 0px 5.4px rgba(0, 0, 0, 0.028),
+    0px 0px 10.1px rgba(0, 0, 0, 0.035), 0px 0px 18.1px rgba(0, 0, 0, 0.042), 0px 0px 33.8px rgba(0, 0, 0, 0.05),
+    0px 0px 81px rgba(0, 0, 0, 0.07);
+  --bigger-font-size: 30px;
 }

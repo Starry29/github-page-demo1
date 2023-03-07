@@ -51,7 +51,7 @@ export const TagForm = defineComponent({
       Object.assign(formData,response.data.resource)
     })
     return () => (
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit} class={s.add}>
         <FormItem label='标签名（最多 4 个字符）'
           type="text"
           v-model={formData.name}
