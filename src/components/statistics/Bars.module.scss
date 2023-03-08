@@ -44,17 +44,17 @@
       transition: width 500ms;
     }
   }
-  &:nth-child(1) {
+  &:nth-child(3n+1) {
     .bar_inner {
       background: #eba953;
     }
   }
-  &:nth-child(2) {
+  &:nth-child(3n+2) {
     .bar_inner {
       background: #53a867;
     }
   }
-  &:nth-child(3) {
+  &:nth-child(3n+3) {
     .bar_inner {
       background: #91cc75;
     }

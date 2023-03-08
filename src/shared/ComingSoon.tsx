@@ -26,9 +26,9 @@ export const ComingSoon = defineComponent({
             <>
               <div>  
                 <Center class={s.nodata_wrapper}>
-                  <Icon name="nodata" class={s.nodata} />
+                  <Icon name="developer" class={s.nodata} />
                 </Center>
-                <p class={s.text}>敬请期待</p>  
+                <p class={s.text}>功能尚未开发，敬请期待哦~</p>  
               </div>
               <div class={s.list}>
                 <MainList/>

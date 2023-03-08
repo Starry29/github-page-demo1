@@ -27,17 +27,17 @@ export const MainList = defineComponent({
         <nav class={s.bottom}>
           <ul class={s.action_list}>
           <li>
-              <RouterLink to="/items" class={s.action}>
+              <RouterLink to="/items" class={s.action} active-class={s.selected}>
                 <Icon name="details" class={s.icon} />
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/items/create" class={s.action}>
+              <RouterLink to="/items/create" class={s.action} >
                 <Icon name="add" class={s.icon} />  
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/statistics" class={s.action}>
+              <RouterLink to="/statistics" class={s.action} active-class={s.selected}>
                 <Icon name="statistics" class={s.icon} />
               </RouterLink>
             </li>

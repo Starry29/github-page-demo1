@@ -7,6 +7,7 @@ import { svgstore } from './src/vite_plugins/svgstore';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '	https://lime-test-1317161083.cos-website.ap-shanghai.myqcloud.com',
   plugins: [
     vue(),
     vueJsx({

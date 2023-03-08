@@ -118,7 +118,7 @@ export const ItemSummary = defineComponent({
             <>
               <Center class={s.nodata_wrapper} direction="|">
                 <Icon name="nodata" class={s.nodata} />
-                <p class={s.note}>目前没有数据</p>
+                <p class={s.note}>暂无数据，请前往记账页面</p>
               </Center>
               <div class={s.button_wrapper}>
                 <RouterLink to="/items/create">

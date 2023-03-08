@@ -28,8 +28,6 @@
     }
   }
 }
-nav {
-  > .action {
-    fill: red;
-  }
+.action.selected{
+  fill: black;
 }
